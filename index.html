@@ -147,7 +147,7 @@
 									<div class="form-group">
 										<label class="col-sm-2 control-label" for="sourceip">Source IPs</label>
 										<div class="col-sm-4">
-											<textarea id="sourceip" class="form-control" rows="5" ng-model="sourceIPs"></textarea>
+											<textarea id="sourceip" class="form-control" rows="5" ng-model="formData.sourceIPs"></textarea>
 										</div>
 										<div class="col-sm-4">
 											<p class="alert-info"> Comma or space seperated source IPs </p>
@@ -158,7 +158,7 @@
 									<div class="form-group">
 										<label class="col-sm-2 control-label" for="destip">Destination IPs</label>
 										<div class="col-sm-4">
-											<textarea id="destip" class="form-control" rows="5" ng-model="destIPs"></textarea>
+											<textarea id="destip" class="form-control" rows="5" ng-model="formData.destIPs"></textarea>
 										</div>
 										<div class="col-sm-4">
 											<p class="alert-info"> Comma or space seperated source IPs </p>
@@ -170,7 +170,7 @@
 									<div class="form-group">
 										<label class="col-sm-2 control-label">Port</label>
 										<div class="col-sm-4">
-											<input type="text" class="form-control" placeholder="port" data-toggle="tooltip" data-placement="bottom" title="Port" ng-model="port">
+											<input type="text" class="form-control" placeholder="port" data-toggle="tooltip" data-placement="bottom" title="Port" ng-model="formData.port">
 										</div>
 										<div class="col-sm-4">
 											<p class="alert-info"> Port Number </p>
@@ -180,7 +180,7 @@
 									<div class="form-group">
 										<label class="col-sm-2 control-label">Seal Id</label>
 										<div class="col-sm-4">
-											<input type="text" class="form-control" placeholder="Seal Id" data-toggle="tooltip" data-placement="bottom" title="Seal Id" ng-model="sealID">
+											<input type="text" class="form-control" placeholder="Seal Id" data-toggle="tooltip" data-placement="bottom" title="Seal Id" ng-model="formData.sealID">
 										</div>
 										<div class="col-sm-4">
 											<p class="alert-info"> A valid seal id the hosted application</p>
@@ -190,7 +190,7 @@
 									<div class="form-group">
 										<label class="col-sm-2 control-label">Jira Ticket</label>
 										<div class="col-sm-4">
-											<input type="text" class="form-control" placeholder="Jira Ticket" data-toggle="tooltip" data-placement="bottom" title="Jira Ticket" ng-model="jiraTicket">
+											<input type="text" class="form-control" placeholder="Jira Ticket" data-toggle="tooltip" data-placement="bottom" title="Jira Ticket" ng-model="formData.jiraTicket">
 										</div>
 										<div class="col-sm-4">
 											<p class="alert-info"> A valid JIRA number </p>
@@ -200,7 +200,7 @@
 									<div class="form-group has-feedback">
 										<label class="col-sm-2 control-label">Protocol</label>
 										<div class="col-sm-4">
-											<select id="s2_with_tag" multiple="multiple" class="populate placeholder" ng-model="protocol">
+											<select id="s2_with_tag" multiple="multiple" class="populate placeholder" ng-model="formData.protocol">
 												<option>TCP   </option>
 												<option>UDP   </option>
 												<option>Other </option>
@@ -322,7 +322,7 @@
 															</td>
 
 															<td>
-																<span class="label label-success" ng-model="rule.validated">{{rule.validated}}</span>
+																<span class="{{rule.validated}}" ng-model="rule.validated"></span>
 																<!-- <span class="label label-warning">un-validated</span> -->
 															</td>
 														</tr>

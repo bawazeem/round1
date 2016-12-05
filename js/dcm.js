@@ -18,16 +18,16 @@ dcm.controller('fwCtrl', ['$scope', '$http', function(scope, http){
     scope.checkFirewallRule = function(){
 
 
-        //var formData = this.getFromData(formData);
 
-        console.log("checking firewall rule ... with " + scope.sourceIPs + " AND : " + scope.destIPs );
+        var formData = {};
+
         // fetch data using http
         //http.get({
         //    method: 'POST',
         //    url: 'http://dcm.jpmchase.net/checkFirewall',
         //    data: formdata
         //}).success(data, function (){
-        //    $scope.rules = data;
+        //    scope.rules = data;
         //});
 
         scope.rules = [
@@ -42,7 +42,7 @@ dcm.controller('fwCtrl', ['$scope', '$http', function(scope, http){
                 srcSealID: "12345",
                 destSealID: "34567",
                 jiraTicket: "DCM1234",
-                validated : "true"
+                validated : "label label-success"
             },
 
             {
@@ -56,7 +56,7 @@ dcm.controller('fwCtrl', ['$scope', '$http', function(scope, http){
                 srcSealID: "2345",
                 destSealID: "34567",
                 jiraTicket: "DCM1244",
-                validated : "false"
+                validated : "label label-warning"
             }
         ]
 
@@ -74,15 +74,6 @@ dcm.controller('fwCtrl', ['$scope', '$http', function(scope, http){
         console.log(" Displaying details ...");
     }
 
-    //scope.getFromData = function (){
-    //    var data = {};
-    //    data :{
-    //        'sourceIPs' : scope.sourceIPS,
-    //        'destIPs'   : scope.destIPs
-    //
-    //    }
-    //    console.log( " get form data ...");
-    //}
+
 }]);
 
-// fwCtrl - what goes into the directvie <h1 ng-controller="gwCtrl">
